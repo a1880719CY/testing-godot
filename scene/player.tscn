@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c1mjtq3fkybhr"]
+
+[ext_resource type="Script" uid="uid://crmuesakda7qe" path="res://scene/player.gd" id="1_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://vnekuo10j7pl" path="res://icon.svg" id="1_xo3ru"]
+
+[node name="Player" type="CharacterBody2D" unique_id=407933071]
+collision_mask = 6
+script = ExtResource("1_hjaqi")
+
+[node name="Player1" type="Sprite2D" parent="." unique_id=1431950408]
+texture = ExtResource("1_xo3ru")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1896591099]
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(59, 55, 65, -59, -60, -59, -55, 56)
+
+[node name="laserStartPosition" type="Marker2D" parent="." unique_id=777881119]
+position = Vector2(0, -87)
+
+[node name="gunCD" type="Timer" parent="." unique_id=2206221]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="gunCD" to="." method="_on_gun_cd_timeout"]

@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://cnxyn6ms8mkwd"]
+
+[ext_resource type="Script" uid="uid://cjvcolccog3bj" path="res://scene/level.gd" id="1_7g0b6"]
+[ext_resource type="Texture2D" uid="uid://dyeyc4m4pnd1f" path="res://Images/works.png" id="1_dmi07"]
+[ext_resource type="Texture2D" uid="uid://dpj3cft4h1wtl" path="res://animation/001.png" id="3_j35ge"]
+[ext_resource type="PackedScene" uid="uid://c1mjtq3fkybhr" path="res://scene/player.tscn" id="3_ukt71"]
+[ext_resource type="Texture2D" uid="uid://dbwkxr6doyrin" path="res://animation/002.png" id="4_kfbl3"]
+[ext_resource type="Texture2D" uid="uid://d3j2pig2yxe58" path="res://animation/003.png" id="5_3u5es"]
+[ext_resource type="Texture2D" uid="uid://bj5jxmi0gxdiu" path="res://animation/004.png" id="6_60efd"]
+[ext_resource type="Texture2D" uid="uid://2dyhl5rbnycx" path="res://animation/005.png" id="7_ow60o"]
+[ext_resource type="Texture2D" uid="uid://cq7vn57jdp7td" path="res://animation/006.png" id="8_ns1e4"]
+[ext_resource type="Texture2D" uid="uid://gmkahrlftfeh" path="res://animation/007.png" id="9_rd7b3"]
+[ext_resource type="Texture2D" uid="uid://cykrox2p7bcn1" path="res://animation/008.png" id="10_tb2sr"]
+[ext_resource type="Texture2D" uid="uid://bxurnqt2efxtk" path="res://animation/009.png" id="11_qucoa"]
+[ext_resource type="Texture2D" uid="uid://cyxaiooo1pjnb" path="res://animation/010.png" id="12_saxtv"]
+[ext_resource type="PackedScene" uid="uid://sbg1wwpt7jxn" path="res://scene/ui.tscn" id="14_kfbl3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d37jh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j35ge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kfbl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3u5es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_60efd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ow60o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ns1e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rd7b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tb2sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qucoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_saxtv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmi07"]
+size = Vector2(26, 642)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g0b6"]
+size = Vector2(1201, 34)
+
+[node name="level" type="Node2D" unique_id=732656066]
+script = ExtResource("1_7g0b6")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=111674996]
+position = Vector2(572, 326)
+scale = Vector2(4.5305467, 6.1234565)
+texture = ExtResource("1_dmi07")
+metadata/_edit_lock_ = true
+
+[node name="tutel" type="Node2D" parent="." unique_id=1755591383]
+position = Vector2(895, 213)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="tutel" unique_id=1512374587]
+sprite_frames = SubResource("SpriteFrames_d37jh")
+autoplay = "default"
+frame_progress = 0.43843627
+
+[node name="Player" parent="." unique_id=1642908767 instance=ExtResource("3_ukt71")]
+position = Vector2(479, 302)
+
+[node name="Border" type="Node2D" parent="." unique_id=1207964980]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Border" unique_id=412993443]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D" unique_id=1842405480]
+position = Vector2(-6, 323)
+shape = SubResource("RectangleShape2D_dmi07")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Border" unique_id=1290224050]
+position = Vector2(1173, -2)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D2" unique_id=1801112202]
+position = Vector2(-6, 323)
+shape = SubResource("RectangleShape2D_dmi07")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Border" unique_id=1699956442]
+position = Vector2(541, -169)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D3" unique_id=808776677]
+position = Vector2(45.5, 152)
+shape = SubResource("RectangleShape2D_7g0b6")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Border" unique_id=1741077261]
+position = Vector2(538, 507)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D4" unique_id=1135676083]
+position = Vector2(45.5, 152)
+shape = SubResource("RectangleShape2D_7g0b6")
+
+[node name="Timer" type="Timer" parent="." unique_id=460831762]
+wait_time = 0.1
+autostart = true
+
+[node name="Block" type="Node2D" parent="." unique_id=325938058]
+
+[node name="Laser" type="Node2D" parent="." unique_id=2117680420]
+
+[node name="UI" parent="." unique_id=720011175 instance=ExtResource("14_kfbl3")]
+
+[connection signal="laser" from="Player" to="." method="_on_player_laser"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

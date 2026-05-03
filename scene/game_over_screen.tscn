@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c3yhpsu6j6hyv"]
+
+[ext_resource type="Script" uid="uid://dq6u8e0qho7qn" path="res://scene/game_over_screen.gd" id="1_c0347"]
+[ext_resource type="PackedScene" uid="uid://cnxyn6ms8mkwd" path="res://scene/level.tscn" id="2_qhku3"]
+
+[node name="GameOverScreen" type="Control" unique_id=1998678451]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c0347")
+level_scene = ExtResource("2_qhku3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=176027403]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 659.0
+
+[node name="CenterWord" type="MarginContainer" parent="." unique_id=995473926]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 419.0
+offset_top = 266.5
+offset_right = 733.0
+offset_bottom = 381.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterWord" unique_id=334235335]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterWord/VBoxContainer" unique_id=1639190572]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 58
+text = "Game Over"
+
+[node name="Label2" type="Label" parent="CenterWord/VBoxContainer" unique_id=1901532086]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "Your score: 10"
+
+[node name="BottumWord" type="MarginContainer" parent="." unique_id=499431698]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 440.5
+offset_top = 608.0
+offset_right = 711.5
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="BottumWord" unique_id=2122316129]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "SPACE TO START AGAIN"
